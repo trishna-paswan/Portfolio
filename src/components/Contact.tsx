@@ -53,7 +53,8 @@ export default function Contact() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("http://localhost:8000/api/contact", {
+      const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+      const response = await fetch(`${apiBase}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

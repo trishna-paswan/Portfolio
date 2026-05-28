@@ -120,7 +120,8 @@ I couldn't locate specific details about "${query}". Try asking about her "Proje
 
     // Try communicating with FastAPI server
     try {
-      const response = await fetch("http://localhost:8000/api/chat", {
+      const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+      const response = await fetch(`${apiBase}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: textToSend })
