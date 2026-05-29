@@ -227,14 +227,14 @@ export default function Hero() {
           className="mt-8 flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-md px-4"
         >
           <a
-            href="#contact"
+            href="/contact"
             className="w-full sm:w-auto px-6 py-3 rounded-lg bg-gradient-to-r from-neon-cyan to-neon-blue text-black font-semibold font-mono text-sm tracking-wider flex items-center justify-center gap-2 border border-neon-cyan/50 hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
           >
             <Mail className="w-4 h-4" />
             CONTACT.INIT()
           </a>
           <a
-            href="#projects"
+            href="/projects"
             className="w-full sm:w-auto px-6 py-3 rounded-lg bg-black/60 text-neon-cyan font-mono text-sm tracking-wider flex items-center justify-center gap-2 border border-neon-cyan/30 hover:border-neon-cyan/80 hover:bg-neon-cyan/5 hover:shadow-[0_0_15px_rgba(0,240,255,0.15)] transition-all duration-300 transform hover:-translate-y-0.5"
           >
             <TerminalIcon className="w-4 h-4" />
