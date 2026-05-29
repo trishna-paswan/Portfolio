@@ -20,10 +20,18 @@ app = FastAPI(
 )
 
 # Enable CORS for specific origins only
-raw_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000")
+raw_origins = os.getenv(
+    "ALLOWED_ORIGINS",
+    "http://localhost:3000,https://trishnapaswan.vercel.app"
+)
+
 allowed_origins = [o.strip() for o in raw_origins.split(",") if o.strip()]
+
 if "http://localhost:3000" not in allowed_origins:
     allowed_origins.append("http://localhost:3000")
+
+if "https://trishnapaswan.vercel.app" not in allowed_origins:
+    allowed_origins.append("https://trishnapaswan.vercel.app")
 
 app.add_middleware(
     CORSMiddleware,
