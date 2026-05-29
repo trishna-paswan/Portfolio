@@ -14,7 +14,7 @@ export default function Contact() {
     {
       name: "EMAIL",
       value: "trishnapaswan.dev@gmail.com",
-      url: "mailto:trishnapaswan.dev@gmail.com",
+      url: "mailto:trishnaapaswan@gmail.com",
       icon: <Mail className="w-5 h-5 text-neon-cyan" />,
       detail: "Operational Range: 24h response",
     },
@@ -27,15 +27,15 @@ export default function Contact() {
     },
     {
       name: "GITHUB",
-      value: "github.com/TrishnaPaswan",
-      url: "https://github.com/TrishnaPaswan",
+      value: "github.com/trishna-paswan",
+      url: "https://github.com/trishna-paswan",
       icon: <FaGithub className="w-5 h-5 text-neon-cyan" />,
       detail: "Autonomous Repositories Matrix",
     },
     {
       name: "LEETCODE",
-      value: "leetcode.com/TrishnaPaswan",
-      url: "https://leetcode.com/TrishnaPaswan",
+      value: "leetcode.com/trishna-paswan",
+      url: "https://leetcode.com/trishna-paswan",
       icon: <Terminal className="w-5 h-5 text-neon-purple" />,
       detail: "Algorithmic Sandbox Log",
     },
