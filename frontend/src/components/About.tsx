@@ -181,12 +181,13 @@ export default function About() {
                 </div>
 
                 <a 
-                  href="/resume.pdf" 
-                  download="Trishna_Paswan_Resume.pdf"
+                  href="https://drive.google.com/file/d/1-Zwt3hag0z2vPHJE6t1k2doj7PpNY-aH/view?usp=sharing" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2 rounded-lg bg-neon-cyan/10 border border-neon-cyan/30 text-neon-cyan font-mono text-[10px] uppercase tracking-widest hover:bg-neon-cyan/20 transition-all cursor-pointer"
                 >
                   <FileText className="w-3.5 h-3.5" />
-                  DOWNLOAD_CV
+                  VIEW_NEURAL_CV
                 </a>
               </div>
             </motion.div>

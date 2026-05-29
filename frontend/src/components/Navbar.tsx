@@ -104,15 +104,16 @@ export default function Navbar() {
               ))}
 
               <a
-                href="/resume.pdf"
-                download="Trishna_Paswan_Resume.pdf"
+                href="https://drive.google.com/file/d/1-Zwt3hag0z2vPHJE6t1k2doj7PpNY-aH/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center gap-4 px-6 py-4 rounded-2xl border border-neon-cyan/20 bg-neon-cyan/5 text-neon-cyan font-mono transition-all hover:bg-neon-cyan/10"
               >
                 <div className="p-2 rounded-lg bg-neon-cyan/20">
                   <Award className="w-4 h-4" />
                 </div>
-                <span className="text-sm tracking-widest">RESUME.pdf</span>
+                <span className="text-sm tracking-widest">NEURAL_CV.drive</span>
               </a>
               
               <div className="mt-8 flex justify-center">

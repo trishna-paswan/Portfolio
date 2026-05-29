@@ -265,12 +265,13 @@ export default function Hero() {
             <FaLinkedin className="w-5 h-5" />
           </a>
           <a
-            href="/resume.pdf"
-            download="Trishna_Paswan_Resume.pdf"
+            href="https://drive.google.com/file/d/1-Zwt3hag0z2vPHJE6t1k2doj7PpNY-aH/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-500 hover:text-neon-cyan font-mono text-xs uppercase tracking-widest border border-gray-800 hover:border-neon-cyan/40 px-3 py-1 rounded transition-colors duration-300 cursor-pointer"
-            title="Download Resume PDF"
+            title="View Resume on Google Drive"
           >
-            ACCESS_CV
+            ACCESS_NEURAL_CV
           </a>
         </motion.div>
       </div>

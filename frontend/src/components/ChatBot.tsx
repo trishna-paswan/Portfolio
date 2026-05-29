@@ -89,7 +89,7 @@ Feel free to submit a message in the contact form below!`;
 
     if (q.includes("resume") || q.includes("cv") || q.includes("profile")) {
       return `RESUME LOGS:
-Trishna's resume details her B.Tech degree, Python/Java capabilities, Flask backends, ML/NLP projects, and her CodeChef BU management history. You can open her NEURAL_CV by clicking the button in the Hero section, or download it from the About section. Pro tip: Type 'resume' in the terminal above for instant access!`;
+    Trishna's resume details her B.Tech degree, Python/Java capabilities, Flask backends, ML/NLP projects, and her CodeChef BU management history. You can view her NEURAL_CV on Google Drive by clicking the button in the Hero section, the About section, or via the mobile menu. Pro tip: Type 'resume' in the terminal above for instant access!`;
     }
 
     if (q.includes("hackathon") || q.includes("codechef") || q.includes("sih") || q.includes("hackstreet")) {

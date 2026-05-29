@@ -162,13 +162,8 @@ export default function Terminal() {
         output = `CREDENTIALS & ACTIVITIES:\n  - Management Head @ CodeChef BU (Organizing events & tech hackathons)\n  - Participant @ Smart India Hackathon (SIH National Finalists support)\n  - Participant @ HackStreet 4.0 Hackathon`;
         break;
       case "resume":
-        const link = document.createElement("a");
-        link.href = "/resume.pdf";
-        link.download = "Trishna_Paswan_Resume.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        output = "INITIALIZING DOWNLOAD: NEURAL_CV.pdf [SUCCESS]";
+        window.open("https://drive.google.com/file/d/1-Zwt3hag0z2vPHJE6t1k2doj7PpNY-aH/view?usp=sharing", "_blank");
+        output = "UPLINK ESTABLISHED: OPENING NEURAL_CV ON GOOGLE_DRIVE [SUCCESS]";
         break;
       case "contact":
         output = `CONTACT CHANNELS:\n  Email:    trishnapaswan.dev@gmail.com\n  GitHub:   github.com/TrishnaPaswan\n  LinkedIn: linkedin.com/in/trishna-paswan\n  LeetCode: leetcode.com/TrishnaPaswan`;
