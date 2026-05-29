@@ -12,13 +12,6 @@ export const metadata: Metadata = {
     description: "Futuristic interactive developer portfolio of Trishna Paswan.",
     url: "https://trishnapaswan.dev",
     siteName: "Trishna Paswan Portfolio",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-      },
-    ],
     locale: "en_US",
     type: "website",
   },
@@ -26,7 +19,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Trishna Paswan | AI Engineer & Full Stack Developer",
     description: "Futuristic interactive developer portfolio of Trishna Paswan.",
-    images: ["/og-image.png"],
   },
 };
 
