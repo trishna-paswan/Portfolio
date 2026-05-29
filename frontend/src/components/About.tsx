@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { User, GraduationCap, Code2, Rocket, BrainCircuit } from "lucide-react";
+import { User, GraduationCap, Code2, Rocket, BrainCircuit, FileText } from "lucide-react";
 
 export default function About() {
   const containerVariants: Variants = {
@@ -170,13 +170,25 @@ export default function About() {
               </div>
 
               {/* Startup mindset callout */}
-              <div className="mt-8 pt-6 border-t border-white/5 flex items-center gap-3">
-                <Rocket className="w-5 h-5 text-neon-purple animate-pulse" />
-                <div className="font-mono text-xs text-gray-400">
-                  <span className="text-white font-bold">STARTUP_MINDSET</span> = true;
-                  <br />
-                  Building rapidly, validating ideas, shipping fast.
+              <div className="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <Rocket className="w-5 h-5 text-neon-purple animate-pulse" />
+                  <div className="font-mono text-xs text-gray-400">
+                    <span className="text-white font-bold">STARTUP_MINDSET</span> = true;
+                    <br />
+                    Building rapidly, validating ideas, shipping fast.
+                  </div>
                 </div>
+
+                <a 
+                  href="/resume.pdf" 
+                  target="_blank"
+                  download="Trishna_Paswan_Resume.pdf"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-neon-cyan/10 border border-neon-cyan/30 text-neon-cyan font-mono text-[10px] uppercase tracking-widest hover:bg-neon-cyan/20 transition-all"
+                >
+                  <FileText className="w-3.5 h-3.5" />
+                  DOWNLOAD_CV
+                </a>
               </div>
             </motion.div>
           </div>

@@ -24,7 +24,7 @@ export default function Terminal() {
   const inputRef = useRef<HTMLInputElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  const availableCommands = ["help", "whoami", "projects", "skills", "achievements", "contact", "matrix", "hack", "clear"];
+  const availableCommands = ["help", "whoami", "projects", "skills", "achievements", "resume", "contact", "matrix", "hack", "clear"];
 
   useEffect(() => {
     terminalEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -125,7 +125,7 @@ export default function Terminal() {
       const hackSteps = [
         "BYPASSING FIREWALL... [SUCCESS]",
         "DOWNLOADING AI ENCRYPTION KEYS... [50%]",
-        "INJECTING MEMORY PAYLOAD... [100%]",
+        "SYNCHRONIZING_NEURAL_NODES... [100%]",
         "ACCESS GRANTED: WELCOME TO OMNI_AI ROOT LAYER.",
         "SYSTEM ACCESS SECURED. CORE RUNNING AT FULL CAPACITY."
       ];
@@ -147,7 +147,7 @@ export default function Terminal() {
 
     switch (trimmed) {
       case "help":
-        output = `AVAILABLE PROTOCOLS:\n  whoami        - Read Trishna's profile summary\n  projects      - Display major project details\n  skills        - List core tech capabilities\n  achievements  - View Hackathons and leadership credentials\n  contact       - Get direct links and mail configs\n  matrix        - Toggle falling code screens\n  hack          - Run AI core diagnostic breach\n  clear         - Wipe shell logs`;
+        output = `AVAILABLE PROTOCOLS:\n  whoami        - Read Trishna's profile summary\n  projects      - Display major project details\n  skills        - List core tech capabilities\n  achievements  - View Hackathons and leadership credentials\n  resume        - Download/View Neural CV (PDF)\n  contact       - Get direct links and mail configs\n  matrix        - Toggle falling code screens\n  hack          - Run AI core diagnostic breach\n  clear         - Wipe shell logs`;
         break;
       case "whoami":
         output = `PROFILE SUMMARY:\n  Name: Trishna Paswan\n  Role: AI Engineer / Full Stack Developer\n  Location: Greater Noida, India\n  Education: B.Tech in CSE, Bennett University (2024 - Present)\n  Mission: To build autonomous, highly intuitive systems using advanced machine learning.`;
@@ -160,6 +160,10 @@ export default function Terminal() {
         break;
       case "achievements":
         output = `CREDENTIALS & ACTIVITIES:\n  - Management Head @ CodeChef BU (Organizing events & tech hackathons)\n  - Participant @ Smart India Hackathon (SIH National Finalists support)\n  - Participant @ HackStreet 4.0 Hackathon`;
+        break;
+      case "resume":
+        window.open("/resume.pdf", "_blank");
+        output = "INITIALIZING DOWNLOAD: NEURAL_CV.pdf [SUCCESS]";
         break;
       case "contact":
         output = `CONTACT CHANNELS:\n  Email:    trishnapaswan.dev@gmail.com\n  GitHub:   github.com/TrishnaPaswan\n  LinkedIn: linkedin.com/in/trishna-paswan\n  LeetCode: leetcode.com/TrishnaPaswan`;

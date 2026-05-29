@@ -107,23 +107,23 @@ async def process_chat(payload: ChatRequest):
     return ChatResponse(reply=reply)
 
 @app.post("/api/contact", response_model=ContactResponse)
-async def process_contact(payload: ContactRequest):
-    logger.info(f"Uplink transmission received from: {payload.name} ({payload.email})")
+async def process_contact(transmission: ContactRequest):
+    logger.info(f"Uplink transmission received from: {transmission.name} ({transmission.email})")
     
     try:
         # Send email using Resend
         params = {
             "from": "Portfolio Contact <onboarding@resend.dev>",
             "to": ["trishnaapaswan@gmail.com"],
-            "subject": f"New Message from {payload.name}",
+            "subject": f"New Message from {transmission.name}",
             "html": f"""
                 <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
                     <h2 style="color: #00f0ff;">New Portfolio Message</h2>
-                    <p><strong>Name:</strong> {payload.name}</p>
-                    <p><strong>Email:</strong> {payload.email}</p>
+                    <p><strong>Name:</strong> {transmission.name}</p>
+                    <p><strong>Email:</strong> {transmission.email}</p>
                     <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
                     <p><strong>Message:</strong></p>
-                    <p style="white-space: pre-wrap;">{payload.message}</p>
+                    <p style="white-space: pre-wrap;">{transmission.message}</p>
                 </div>
             """
         }

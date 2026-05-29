@@ -17,7 +17,7 @@ export default function Navbar() {
     { id: "about", label: "ABOUT.log", icon: <User className="w-3.5 h-3.5" />, href: "/about" },
     { id: "projects", label: "PROJECTS.db", icon: <Layers className="w-3.5 h-3.5" />, href: "/projects" },
     { id: "skills", label: "SKILLS.sys", icon: <Cpu className="w-3.5 h-3.5" />, href: "/skills" },
-    { id: "experience", label: "HISTORY.cfg", icon: <Award className="w-3.5 h-3.5" />, href: "/experience" },
+    { id: "experience", label: "EXPERIENCE.cfg", icon: <Award className="w-3.5 h-3.5" />, href: "/experience" },
     { id: "chat", label: "ASK_AI.chat", icon: <Sparkles className="w-3.5 h-3.5" />, href: "/chat" },
     { id: "contact", label: "UPLINK.io", icon: <Send className="w-3.5 h-3.5" />, href: "/contact" }
   ];
@@ -29,7 +29,7 @@ export default function Navbar() {
           {/* Logo / Operations Status */}
           <Link href="/" className="flex items-center gap-2 font-display text-xs font-bold tracking-widest text-white hover:text-neon-cyan transition-colors">
             <span className="w-2.5 h-2.5 bg-neon-cyan rounded-full animate-pulse shadow-[0_0_8px_rgba(0,240,255,0.8)]" />
-            <span className="hidden sm:inline">TRISHNA_OS v1.0</span>
+            <span className="hidden sm:inline">TRISHNA v1.0</span>
             <span className="sm:hidden text-[10px]">T_OS</span>
           </Link>
 

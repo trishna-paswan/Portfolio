@@ -54,7 +54,7 @@ export default function Skills() {
       items: [
         { name: "Flask", level: "92%", experience: "2 Years", status: "OPTIMIZED", desc: "Lightweight API servers, database model links, automated pipeline endpoints." },
         { name: "FastAPI", level: "88%", experience: "1 Year", status: "STABLE", desc: "High-performance asynchronous backends, automatic swagger doc generations." },
-        { name: "REST APIs", level: "92%", experience: "2.5 Years", status: "OPTIMIZED", desc: "Data interchange schemas, payload structures, auth headers processing." }
+        { name: "REST APIs", level: "92%", experience: "2.5 Years", status: "OPTIMIZED", desc: "Data interchange schemas, data architectures, auth headers processing." }
       ]
     },
     {

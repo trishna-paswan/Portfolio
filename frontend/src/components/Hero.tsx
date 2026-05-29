@@ -267,10 +267,11 @@ export default function Hero() {
           <a
             href="/resume.pdf"
             target="_blank"
+            download="Trishna_Paswan_Resume.pdf"
             className="text-gray-500 hover:text-neon-cyan font-mono text-xs uppercase tracking-widest border border-gray-800 hover:border-neon-cyan/40 px-3 py-1 rounded transition-colors duration-300"
-            title="Download Resume"
+            title="Download Resume PDF"
           >
-            RESUME.md
+            ACCESS_NEURAL_CV
           </a>
         </motion.div>
       </div>

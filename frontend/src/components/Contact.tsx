@@ -13,7 +13,7 @@ export default function Contact() {
   const socialLinks = [
     {
       name: "EMAIL",
-      value: "trishnapaswan.dev@gmail.com",
+      value: "trishnaapaswan@gmail.com",
       url: "mailto:trishnaapaswan@gmail.com",
       icon: <Mail className="w-5 h-5 text-neon-cyan" />,
       detail: "Operational Range: 24h response",
@@ -27,15 +27,15 @@ export default function Contact() {
     },
     {
       name: "GITHUB",
-      value: "github.com/trishna-paswan",
-      url: "https://github.com/trishna-paswan",
+      value: "github.com/TrishnaPaswan",
+      url: "https://github.com/TrishnaPaswan",
       icon: <FaGithub className="w-5 h-5 text-neon-cyan" />,
       detail: "Autonomous Repositories Matrix",
     },
     {
       name: "LEETCODE",
-      value: "leetcode.com/trishna-paswan",
-      url: "https://leetcode.com/trishna-paswan",
+      value: "leetcode.com/TrishnaPaswan",
+      url: "https://leetcode.com/TrishnaPaswan",
       icon: <Terminal className="w-5 h-5 text-neon-purple" />,
       detail: "Algorithmic Sandbox Log",
     },
@@ -45,7 +45,7 @@ export default function Contact() {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setStatus("ERROR");
-      setErrorMessage("DATA PAYLOAD INCOMPLETE. FILL ALL CHANNELS.");
+      setErrorMessage("SIGNAL INTEGRITY FAILURE. FILL ALL CHANNELS.");
       return;
     }
 
@@ -147,14 +147,14 @@ export default function Contact() {
               
               <h4 className="font-display font-semibold text-lg text-white mb-6 uppercase tracking-widest flex items-center gap-2">
                 <Terminal className="w-5 h-5 text-neon-cyan" />
-                TRANSMIT_DATA_PAYLOAD
+                DISPATCH_DIRECTIVE
               </h4>
 
               <form onSubmit={handleSubmit} className="space-y-6 font-mono text-xs">
                 {/* Name Channel */}
                 <div className="space-y-2">
                   <label className="text-gray-500 block text-[9px] uppercase">
-                    SENDER_NAME.log
+                    SENDER_ID.log
                   </label>
                   <input
                     type="text"
@@ -184,7 +184,7 @@ export default function Contact() {
                 {/* Message Channel */}
                 <div className="space-y-2">
                   <label className="text-gray-500 block text-[9px] uppercase">
-                    MESSAGE_PAYLOAD.txt
+                    COMMUNICATION_STREAM.bin
                   </label>
                   <textarea
                     rows={4}
@@ -237,4 +237,3 @@ export default function Contact() {
     </section>
   );
 }
-
