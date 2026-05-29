@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { Terminal as TerminalIcon } from "lucide-react";
+import { portfolioData } from "@/data/portfolioData";
 
 interface TerminalLine {
   text: string;
@@ -24,7 +25,7 @@ export default function Terminal() {
   const inputRef = useRef<HTMLInputElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  const availableCommands = ["help", "whoami", "projects", "skills", "achievements", "resume", "contact", "matrix", "hack", "clear"];
+  const availableCommands = ["help", "whoami", "projects", "skills", "achievements", "resume", "contact", "matrix", "hack", "reset", "clear"];
 
   useEffect(() => {
     terminalEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -103,6 +104,11 @@ export default function Terminal() {
       return;
     }
 
+    if (trimmed === "reset") {
+      window.location.reload();
+      return;
+    }
+
     if (trimmed === "matrix") {
       setIsMatrixMode(!isMatrixMode);
       newHistory.push({
@@ -150,23 +156,23 @@ export default function Terminal() {
         output = `AVAILABLE PROTOCOLS:\n  whoami        - Read Trishna's profile summary\n  projects      - Display major project details\n  skills        - List core tech capabilities\n  achievements  - View Hackathons and leadership credentials\n  resume        - Download/View Neural CV (PDF)\n  contact       - Get direct links and mail configs\n  matrix        - Toggle falling code screens\n  hack          - Run AI core diagnostic breach\n  clear         - Wipe shell logs`;
         break;
       case "whoami":
-        output = `PROFILE SUMMARY:\n  Name: Trishna Paswan\n  Role: AI Engineer / Full Stack Developer\n  Location: Greater Noida, India\n  Education: B.Tech in CSE, Bennett University (2024 - Present)\n  Mission: To build autonomous, highly intuitive systems using advanced machine learning.`;
+        output = `PROFILE SUMMARY:\n  Name: ${portfolioData.profile.name}\n  Role: ${portfolioData.profile.role}\n  Location: ${portfolioData.profile.location}\n  Education: ${portfolioData.profile.education}\n  Mission: ${portfolioData.profile.mission}`;
         break;
       case "projects":
-        output = `PROJECT RECORDS:\n\n1. OmniAI (Python, Flask, Playwright, NLP)\n   - Autonomous Form Filling, Resume ATS evaluation, Plagiarism checks.\n\n2. CodeArena (Flask, Tailwind CSS, Playwright)\n   - Full-stack coding platform supporting real-time sandbox execution.\n\n3. Mental Health Sentiment Analysis (Python, NLP, ML)\n   - Deep text state model detecting distress patterns.\n\n4. QR Code Generator (Python)\n   - Custom vector QR builder.`;
+        output = `PROJECT RECORDS:\n\n${portfolioData.projects.map((p, idx) => `${idx + 1}. ${p.title} (${p.tech.slice(0, 3).join(", ")})\n   - ${p.description}`).join("\n\n")}`;
         break;
       case "skills":
-        output = `SKILL INVENTORY:\n  Languages: Python, Java, C++, JavaScript, TypeScript\n  Frontend:  Next.js, Tailwind CSS, HTML/CSS\n  Backend:   FastAPI, Flask, REST APIs\n  AI/ML:     Machine Learning, NLP, spaCy, scikit-learn\n  DevOps:    Git, GitHub, Playwright, Render, Vercel, Supabase`;
+        output = `SKILL INVENTORY:\n${portfolioData.skills.map(s => `  ${s.category.padEnd(12)}: ${s.items}`).join("\n")}`;
         break;
       case "achievements":
-        output = `CREDENTIALS & ACTIVITIES:\n  - Management Head @ CodeChef BU (Organizing events & tech hackathons)\n  - Participant @ Smart India Hackathon (SIH National Finalists support)\n  - Participant @ HackStreet 4.0 Hackathon`;
+        output = `CREDENTIALS & ACTIVITIES:\n${portfolioData.achievements.map(a => `  - ${a}`).join("\n")}`;
         break;
       case "resume":
-        window.open("https://drive.google.com/file/d/1-Zwt3hag0z2vPHJE6t1k2doj7PpNY-aH/view?usp=sharing", "_blank");
+        window.open(portfolioData.profile.resume, "_blank");
         output = "UPLINK ESTABLISHED: OPENING NEURAL_CV ON GOOGLE_DRIVE [SUCCESS]";
         break;
       case "contact":
-        output = `CONTACT CHANNELS:\n  Email:    trishnapaswan.dev@gmail.com\n  GitHub:   github.com/TrishnaPaswan\n  LinkedIn: linkedin.com/in/trishna-paswan\n  LeetCode: leetcode.com/TrishnaPaswan`;
+        output = `CONTACT CHANNELS:\n  Email:    ${portfolioData.profile.email}\n  GitHub:   ${portfolioData.profile.github.replace("https://", "")}\n  LinkedIn: ${portfolioData.profile.linkedin.replace("https://", "")}\n  LeetCode: ${portfolioData.profile.leetcode.replace("https://", "")}`;
         break;
       case "":
         output = "";

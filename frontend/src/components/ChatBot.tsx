@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Send, Sparkles, User, Bot, Loader2 } from "lucide-react";
+import { portfolioData } from "@/data/portfolioData";
 
 interface Message {
   id: string;
@@ -41,62 +42,53 @@ export default function ChatBot() {
 
     if (q.includes("project") || q.includes("build") || q.includes("work")) {
       return `TRISHNA HAS BUILT MULTIPLE AI-POWERED PLATFORMS:
-- OmniAI: Multi-functional AI portal featuring Google Form AutoFilling, Resume Analysis, ATS scoring, and Plagiarism Detection. (Python, Flask, Playwright, NLP)
-- CodeArena: Full-stack coding platform supporting real-time sandbox code execution and evaluation logic. (Flask, Tailwind, REST APIs, Playwright)
-- Sentiment ML: AI NLP model classifying mental health states from text feeds. (Python, ML)
-- QR Builder: Custom high-resolution vector QR code generation utility.`;
+${portfolioData.projects.map(p => `- ${p.title}: ${p.subtitle} (${p.tech.join(", ")})`).join("\n")}`;
     }
 
     if (q.includes("skill") || q.includes("technolog") || q.includes("know") || q.includes("language") || q.includes("code")) {
       return `TECHNICAL CAPABILITIES LOGGED:
-- LANGUAGES: Python, Java, C++, JavaScript, TypeScript.
-- FRONTEND: Next.js, Tailwind CSS, HTML/CSS.
-- BACKEND: Flask, FastAPI, REST APIs.
-- AI / ML: Machine Learning models, Natural Language Processing, spaCy, scikit-learn.
-- TOOLS: Git, GitHub, Playwright browser automation, Supabase, Render, Vercel.`;
+${portfolioData.skills.map(s => `- ${s.category}: ${s.items}.`).join("\n")}`;
     }
 
     if (q.includes("omniai") || q.includes("omni ai") || q.includes("form")) {
+      const p = portfolioData.projects.find(p => p.title === "OmniAI");
       return `OMNIAI LOGS:
-- DESCRIPTION: A centralized AI automation and document extraction tool.
-- CAPABILITIES: Google Form Auto-filling, Resume evaluation against ATS (Applicant Tracking System) scoring benchmarks, and semantic plagiarism checks.
-- TECH STACK: Python, Flask, Playwright automation, NLP (spaCy).`;
+- DESCRIPTION: ${p?.description}
+- CAPABILITIES: ${p?.features.join(", ")}
+- TECH STACK: ${p?.tech.join(", ")}.`;
     }
 
     if (q.includes("codearena") || q.includes("code arena") || q.includes("sandbox") || q.includes("compiler")) {
+      const p = portfolioData.projects.find(p => p.title === "CodeArena");
       return `CODEARENA LOGS:
-- DESCRIPTION: A competitive-coding sandbox platform.
-- CAPABILITIES: Real-time user code compilation, test-case verification runner, secure isolated shell, and scoreboards.
-- TECH STACK: Flask backend, Tailwind CSS, REST API layer, Playwright testing runner.`;
+- DESCRIPTION: ${p?.description}
+- CAPABILITIES: ${p?.features.join(", ")}
+- TECH STACK: ${p?.tech.join(", ")}.`;
     }
 
     if (q.includes("education") || q.includes("college") || q.includes("university") || q.includes("study") || q.includes("student")) {
       return `ACADEMIC LOGS:
-- INSTITUTION: Bennett University, Greater Noida, India.
-- DEGREE: Bachelor of Technology (B.Tech) in Computer Science & Engineering.
-- TIMELINE: 2024 — Present.
-- FOCUS: Advanced algorithms, artificial intelligence models, and student leadership as Management Head at CodeChef BU.`;
+- EDUCATION: ${portfolioData.profile.education}
+- FOCUS: Advanced algorithms, artificial intelligence models, and student leadership.`;
     }
 
     if (q.includes("contact") || q.includes("email") || q.includes("social") || q.includes("reach") || q.includes("linkedin") || q.includes("github")) {
       return `COMMUNICATIONS PROTOCOLS:
-- EMAIL: trishnapaswan.dev@gmail.com
-- LINKEDIN: linkedin.com/in/trishna-paswan
-- GITHUB: github.com/TrishnaPaswan
-- LEETCODE: leetcode.com/TrishnaPaswan
+- EMAIL: ${portfolioData.profile.email}
+- LINKEDIN: ${portfolioData.profile.linkedin.replace("https://", "")}
+- GITHUB: ${portfolioData.profile.github.replace("https://", "")}
+- LEETCODE: ${portfolioData.profile.leetcode.replace("https://", "")}
 Feel free to submit a message in the contact form below!`;
     }
 
     if (q.includes("resume") || q.includes("cv") || q.includes("profile")) {
       return `RESUME LOGS:
-    Trishna's resume details her B.Tech degree, Python/Java capabilities, Flask backends, ML/NLP projects, and her CodeChef BU management history. You can view her NEURAL_CV on Google Drive by clicking the button in the Hero section, the About section, or via the mobile menu. Pro tip: Type 'resume' in the terminal above for instant access!`;
+Trishna's resume details her experience and skills. You can view her NEURAL_CV on Google Drive by clicking the button in the Hero section, or type 'resume' in the terminal above!`;
     }
 
     if (q.includes("hackathon") || q.includes("codechef") || q.includes("sih") || q.includes("hackstreet")) {
       return `CREDENTIALS LOGS:
-- MANAGEMENT HEAD @ CodeChef BU: Leading community hackathons and workshops.
-- SIH FINALIST SUPPORT: Competed at Smart India Hackathon solving ministry statements.
-- HACKSTREET 4.0: 36-hour sprint coding AI and automation prototypes.`;
+${portfolioData.achievements.map(a => `- ${a}`).join("\n")}`;
     }
 
     return `REQUEST RECEIVED. TRISHNA_AI HAS SEARCHED HER LOCAL KERNEL.

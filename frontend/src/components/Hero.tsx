@@ -7,7 +7,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const mousePosRef = useRef({ x: 0, y: 0 });
   const [systemTime, setSystemTime] = useState("");
 
   useEffect(() => {
@@ -52,6 +52,9 @@ export default function Hero() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = "rgba(0, 240, 255, 0.4)";
       
+      const mouseX = mousePosRef.current.x;
+      const mouseY = mousePosRef.current.y;
+
       particles.forEach((p, idx) => {
         // Move
         p.x += p.speedX;
@@ -64,8 +67,8 @@ export default function Hero() {
         if (p.y > canvas.height) p.y = 0;
 
         // Interactive mouse gravity (slight pull)
-        const dx = mousePos.x - p.x;
-        const dy = mousePos.y - p.y;
+        const dx = mouseX - p.x;
+        const dy = mouseY - p.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < 180) {
           const force = (180 - dist) / 180;
@@ -102,28 +105,28 @@ export default function Hero() {
     window.addEventListener("resize", resizeCanvas);
     drawParticles();
 
+    const handleMouseMove = (e: MouseEvent) => {
+      mousePosRef.current = { x: e.clientX, y: e.clientY };
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+
     return () => {
       window.removeEventListener("resize", resizeCanvas);
+      window.removeEventListener("mousemove", handleMouseMove);
       cancelAnimationFrame(animationId);
     };
-  }, [mousePos]);
+  }, []); // Only run once on mount
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-
     const updateTime = () => {
       const now = new Date();
       setSystemTime(now.toUTCString().replace("GMT", "UTC"));
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
     updateTime();
     const interval = setInterval(updateTime, 1000);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
       clearInterval(interval);
     };
   }, []);
@@ -150,7 +153,7 @@ export default function Hero() {
       {/* Cyber HUD - Top Right */}
       <div className="absolute top-6 right-6 z-10 hidden md:block font-mono text-[10px] text-gray-500 space-y-1 text-right select-none pointer-events-none">
         <div><span className="text-gray-600">SYSTEM TIME:</span> {systemTime}</div>
-        <div><span className="text-gray-600">MOUSE_X:</span> {mousePos.x}px | <span className="text-gray-600">MOUSE_Y:</span> {mousePos.y}px</div>
+        <div><span className="text-gray-600">MOUSE_TRACK:</span> ACTIVE</div>
         <div><span className="text-gray-600">COGNITION:</span> GEMINI_CORE_V3.5</div>
       </div>
 

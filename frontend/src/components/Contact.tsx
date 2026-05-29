@@ -65,15 +65,12 @@ export default function Contact() {
         setFormData({ name: "", email: "", message: "" });
         triggerConfetti();
       } else {
-        throw new Error("API Failure");
+        const data = await response.json();
+        throw new Error(data.detail || "API Failure");
       }
-    } catch {
-      // Local fallback simulation (always succeeds locally for demo smoothness)
-      setTimeout(() => {
-        setStatus("SUCCESS");
-        setFormData({ name: "", email: "", message: "" });
-        triggerConfetti();
-      }, 1000);
+    } catch (err: any) {
+      setStatus("ERROR");
+      setErrorMessage(err.message || "COMMUNICATION LINK FAILURE. RETRY LATER.");
     }
   };
 
