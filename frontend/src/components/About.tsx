@@ -182,9 +182,8 @@ export default function About() {
 
                 <a 
                   href="/resume.pdf" 
-                  target="_blank"
                   download="Trishna_Paswan_Resume.pdf"
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-neon-cyan/10 border border-neon-cyan/30 text-neon-cyan font-mono text-[10px] uppercase tracking-widest hover:bg-neon-cyan/20 transition-all"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-neon-cyan/10 border border-neon-cyan/30 text-neon-cyan font-mono text-[10px] uppercase tracking-widest hover:bg-neon-cyan/20 transition-all cursor-pointer"
                 >
                   <FileText className="w-3.5 h-3.5" />
                   DOWNLOAD_CV

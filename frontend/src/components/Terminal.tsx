@@ -162,7 +162,12 @@ export default function Terminal() {
         output = `CREDENTIALS & ACTIVITIES:\n  - Management Head @ CodeChef BU (Organizing events & tech hackathons)\n  - Participant @ Smart India Hackathon (SIH National Finalists support)\n  - Participant @ HackStreet 4.0 Hackathon`;
         break;
       case "resume":
-        window.open("/resume.pdf", "_blank");
+        const link = document.createElement("a");
+        link.href = "/resume.pdf";
+        link.download = "Trishna_Paswan_Resume.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
         output = "INITIALIZING DOWNLOAD: NEURAL_CV.pdf [SUCCESS]";
         break;
       case "contact":

@@ -155,7 +155,7 @@ export default function Hero() {
       </div>
 
       {/* Main Hero Container */}
-      <div className="relative w-full max-w-6xl mx-auto flex flex-col justify-center items-center flex-grow z-10 text-center select-none pt-12">
+      <div className="relative w-full max-w-6xl mx-auto flex flex-col justify-center items-center flex-grow z-10 text-center pt-12">
         {/* Animated Cyber Core Circle (Rotating Rings) */}
         <div className="relative w-48 h-48 md:w-64 md:h-64 mb-8 flex justify-center items-center">
           {/* Inner pulsating core */}
@@ -266,12 +266,11 @@ export default function Hero() {
           </a>
           <a
             href="/resume.pdf"
-            target="_blank"
             download="Trishna_Paswan_Resume.pdf"
-            className="text-gray-500 hover:text-neon-cyan font-mono text-xs uppercase tracking-widest border border-gray-800 hover:border-neon-cyan/40 px-3 py-1 rounded transition-colors duration-300"
+            className="text-gray-500 hover:text-neon-cyan font-mono text-xs uppercase tracking-widest border border-gray-800 hover:border-neon-cyan/40 px-3 py-1 rounded transition-colors duration-300 cursor-pointer"
             title="Download Resume PDF"
           >
-            ACCESS_NEURAL_CV
+            ACCESS_CV
           </a>
         </motion.div>
       </div>

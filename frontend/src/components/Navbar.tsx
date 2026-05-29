@@ -30,7 +30,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2 font-display text-xs font-bold tracking-widest text-white hover:text-neon-cyan transition-colors">
             <span className="w-2.5 h-2.5 bg-neon-cyan rounded-full animate-pulse shadow-[0_0_8px_rgba(0,240,255,0.8)]" />
             <span className="hidden sm:inline">TRISHNA v1.0</span>
-            <span className="sm:hidden text-[10px]">T_OS</span>
+            <span className="sm:hidden text-[10px]">TRISHNA</span>
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -102,6 +102,18 @@ export default function Navbar() {
                   <span className="text-sm tracking-widest">{item.label}</span>
                 </Link>
               ))}
+
+              <a
+                href="/resume.pdf"
+                download="Trishna_Paswan_Resume.pdf"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-4 px-6 py-4 rounded-2xl border border-neon-cyan/20 bg-neon-cyan/5 text-neon-cyan font-mono transition-all hover:bg-neon-cyan/10"
+              >
+                <div className="p-2 rounded-lg bg-neon-cyan/20">
+                  <Award className="w-4 h-4" />
+                </div>
+                <span className="text-sm tracking-widest">RESUME.pdf</span>
+              </a>
               
               <div className="mt-8 flex justify-center">
                 <div className="flex items-center gap-2 font-mono text-[10px] text-neon-cyan bg-neon-cyan/5 border border-neon-cyan/20 px-4 py-2 rounded-full">
