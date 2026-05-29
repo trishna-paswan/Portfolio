@@ -15,7 +15,7 @@ export default function ChatBot() {
     {
       id: "1",
       sender: "ai",
-      text: "HELLO. I AM TRISHNA_AI, A COGNITIVE CHAT INTERFACE DETAILED WITH TRISHNA PASWAN'S WORK RECORD. HOW CAN I ASSIST YOUR EXPLORATION?",
+      text: "Hi! I'm Trishna's AI assistant. I can help you find information about her projects, skills, and experience. What would you like to know?",
       timestamp: "10:00:00"
     }
   ]);
@@ -170,10 +170,10 @@ I couldn't locate specific details about "${query}". Try asking about her "Proje
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12">
           <h2 className="font-display text-xs uppercase tracking-widest text-neon-cyan mb-2">
-            {"// SUB_SYSTEM: INTERACTIVE_ASSISTANT"}
+            {"// CHAT: ASSISTANT"}
           </h2>
           <h3 className="text-3xl md:text-5xl font-black text-white">
-            Cognitive Assistant
+            AI Assistant
           </h3>
           <div className="w-16 h-[2px] bg-gradient-to-r from-neon-cyan to-neon-purple mt-4" />
         </div>

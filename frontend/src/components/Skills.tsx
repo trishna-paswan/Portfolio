@@ -206,8 +206,8 @@ export default function Skills() {
                   >
                     <ShieldAlert className="w-8 h-8 text-neon-purple animate-pulse" />
                     <div>
-                      <p className="text-xs uppercase text-neon-cyan tracking-wider font-bold">SYSTEM MONITOR ACTIVE</p>
-                      <p className="text-[10px] mt-1">SELECT A TECHNOLOGICAL NODE ON THE LEFT FOR INTEL DIAGNOSTICS.</p>
+                      <p className="text-xs uppercase text-neon-cyan tracking-wider font-bold">STATION ACTIVE</p>
+                      <p className="text-[10px] mt-1">SELECT A TECHNOLOGICAL NODE ON THE LEFT FOR DETAILS.</p>
                     </div>
                   </motion.div>
                 )}
@@ -215,7 +215,7 @@ export default function Skills() {
 
               {/* Console visual frame lines */}
               <div className="border-t border-white/5 pt-4 mt-6 flex items-center justify-between font-mono text-[9px] text-gray-600">
-                <span>TELEMETRY_LINK_ESTABLISHED</span>
+                <span>CONNECTION_STABLE</span>
                 <span>ID: {activeCategory.toUpperCase()}_CELL</span>
               </div>
             </div>

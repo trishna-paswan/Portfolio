@@ -11,8 +11,8 @@ interface TerminalLine {
 export default function Terminal() {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<TerminalLine[]>([
-    { text: "TRISHNA OS v1.0.5 INITIALIZED.", type: "system" },
-    { text: "TYPE 'help' TO VIEW LIST OF AVAILABLE PROTOCOLS.", type: "system" },
+    { text: "SYSTEM CORE v1.0.5 INITIALIZED.", type: "system" },
+    { text: "TYPE 'help' TO VIEW AVAILABLE COMMANDS.", type: "system" },
     { text: "", type: "output" }
   ]);
   const [cmdHistory, setCmdHistory] = useState<string[]>([]);
@@ -162,7 +162,7 @@ export default function Terminal() {
         output = `CREDENTIALS & ACTIVITIES:\n  - Management Head @ CodeChef BU (Organizing events & tech hackathons)\n  - Participant @ Smart India Hackathon (SIH National Finalists support)\n  - Participant @ HackStreet 4.0 Hackathon`;
         break;
       case "contact":
-        output = `CONNECT LAYER:\n  Email:    trishnapaswan.dev@gmail.com\n  GitHub:   github.com/TrishnaPaswan\n  LinkedIn: linkedin.com/in/trishna-paswan\n  LeetCode: leetcode.com/TrishnaPaswan`;
+        output = `CONTACT CHANNELS:\n  Email:    trishnapaswan.dev@gmail.com\n  GitHub:   github.com/TrishnaPaswan\n  LinkedIn: linkedin.com/in/trishna-paswan\n  LeetCode: leetcode.com/TrishnaPaswan`;
         break;
       case "":
         output = "";

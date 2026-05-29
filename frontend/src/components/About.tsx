@@ -25,19 +25,19 @@ export default function About() {
 
   const coreAttributes = [
     {
-      title: "Cognitive AI Integration",
+      title: "AI & Machine Learning",
       value: "95%",
-      desc: "Architecting autonomous agents and NLP systems.",
+      desc: "Developing autonomous agents and advanced NLP pipelines.",
     },
     {
-      title: "Full-Stack Adaptability",
+      title: "Full-Stack Development",
       value: "92%",
-      desc: "Creating robust backends and premium fluid frontends.",
+      desc: "Building robust backends and high-performance frontends.",
     },
     {
-      title: "Algorithmic Precision",
+      title: "System Architecture",
       value: "88%",
-      desc: "Writing clean, optimized, and performant logic.",
+      desc: "Designing scalable, optimized, and maintainable software.",
     },
   ];
 
@@ -51,10 +51,10 @@ export default function About() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <h2 className="font-display text-xs uppercase tracking-widest text-neon-cyan mb-2">
-            {"// SUB_SYSTEM: IDENTITY_MODULE"}
+            {"// IDENTITY: PROFILE"}
           </h2>
           <h3 className="text-3xl md:text-5xl font-black text-white">
-            Accessing Neural Profiles
+            Professional Profile
           </h3>
           <div className="w-16 h-[2px] bg-gradient-to-r from-neon-cyan to-neon-purple mt-4" />
         </div>
@@ -79,10 +79,10 @@ export default function About() {
                 </div>
                 <div>
                   <h4 className="font-display font-semibold text-lg text-white mb-2 uppercase tracking-wide">
-                    BIO_SUMMARY.log
+                    The Journey
                   </h4>
                   <p className="text-gray-400 text-sm font-mono leading-relaxed">
-                    I am Trishna Paswan, an AI Engineer and Full Stack Developer focused on building futuristic products that solve real-world problems. I combine machine learning algorithms with performant, pixel-perfect frontend experiences.
+                    I am Trishna Paswan, an AI Engineer and Full Stack Developer dedicated to building software that bridges the gap between complex algorithms and intuitive user experiences. My work focuses on creating intelligent systems that solve real-world automation challenges.
                   </p>
                 </div>
               </div>
@@ -99,10 +99,10 @@ export default function About() {
                 </div>
                 <div>
                   <h4 className="font-display font-semibold text-lg text-white mb-2 uppercase tracking-wide">
-                    PHILOSOPHY_MISSION.cfg
+                    The Mission
                   </h4>
                   <p className="text-gray-400 text-sm font-mono leading-relaxed">
-                    AI shouldn&apos;t just be an API endpoint; it should feel like an organic extension of human capability. I aim to write intelligent, clean, self-optimizing code that helps automate complex manual workflows and speeds up creation.
+                    I believe AI should empower human creativity, not replace it. My goal is to develop tools and platforms that automate the mundane, allowing people to focus on high-level problem solving and innovation.
                   </p>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export default function About() {
                 </div>
                 <div>
                   <h4 className="font-display font-semibold text-lg text-white mb-2 uppercase tracking-wide">
-                    ACADEMIC_RECORD.db
+                    Education
                   </h4>
                   <div className="font-mono text-sm text-gray-400">
                     <p className="text-white font-semibold">B.Tech in Computer Science & Engineering</p>

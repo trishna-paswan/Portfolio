@@ -199,9 +199,9 @@ export default function Hero() {
           </div>
           
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-black font-display tracking-tight text-white leading-none">
-            Building AI-Powered <br className="hidden md:inline" />
+            Architecting the <br className="hidden md:inline" />
             <span className="bg-gradient-to-r from-neon-cyan via-blue-400 to-neon-purple bg-clip-text text-transparent text-glow-cyan">
-              Digital Experiences
+              Future of Automation
             </span>
           </h1>
         </motion.div>
@@ -213,7 +213,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
           className="mt-6 text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl font-mono leading-relaxed"
         >
-          AI Engineer crafting intelligent systems, futuristic interfaces, and scalable products using machine learning and modern web technologies.
+          AI Engineer and Full Stack Developer specializing in building autonomous systems, intelligent automation pipelines, and scalable digital products.
         </motion.p>
 
         {/* Buttons Grid */}

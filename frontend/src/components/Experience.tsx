@@ -70,10 +70,10 @@ export default function Experience() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-20">
           <h2 className="font-display text-xs uppercase tracking-widest text-neon-cyan mb-2">
-            {"// SUB_SYSTEM: LIFECYCLE_LOG"}
+            {"// HISTORY: MILESTONES"}
           </h2>
           <h3 className="text-3xl md:text-5xl font-black text-white">
-            Operational History
+            Professional Experience
           </h3>
           <div className="w-16 h-[2px] bg-gradient-to-r from-neon-cyan to-neon-purple mt-4" />
         </div>
@@ -132,7 +132,7 @@ export default function Experience() {
                 {/* Sub features log list */}
                 <div className="space-y-3 font-mono text-xs border-t border-white/5 pt-5">
                   <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">
-                    {"// KEY_CONTRIBUTIONS.log"}
+                    {"// Key Contributions"}
                   </div>
                   <ul className="space-y-2 text-gray-400 font-sans text-xs">
                     {event.details.map((detail, dIdx) => (

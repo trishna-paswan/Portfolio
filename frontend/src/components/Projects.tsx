@@ -142,10 +142,10 @@ export default function Projects() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <h2 className="font-display text-xs uppercase tracking-widest text-neon-cyan mb-2">
-            {"// SUB_SYSTEM: STORAGE_CELL"}
+            {"// PORTFOLIO: REPOSITORIES"}
           </h2>
           <h3 className="text-3xl md:text-5xl font-black text-white">
-            Futuristic Repositories
+            Featured Projects
           </h3>
           <div className="w-16 h-[2px] bg-gradient-to-r from-neon-cyan to-neon-purple mt-4" />
         </div>
@@ -162,11 +162,11 @@ export default function Projects() {
               <div className="p-6 border-b border-white/5 bg-black/40 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <TerminalSquare className="w-4 h-4 text-neon-cyan" />
-                  <span className="font-mono text-xs text-gray-500 uppercase">SYS_LOG::{project.title}</span>
+                  <span className="font-mono text-xs text-gray-500 uppercase">PROJECT::{project.title}</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 bg-neon-cyan rounded-full animate-ping" />
-                  <span className="font-mono text-[9px] text-neon-cyan">LIVE_STACK</span>
+                  <span className="font-mono text-[9px] text-neon-cyan">PRODUCTION</span>
                 </div>
               </div>
 
@@ -202,7 +202,7 @@ export default function Projects() {
                   className="px-4 py-2 rounded bg-neon-cyan/10 border border-neon-cyan/30 text-neon-cyan font-mono text-xs hover:bg-neon-cyan/20 transition-all flex items-center gap-1.5 cursor-pointer"
                 >
                   <Eye className="w-3.5 h-3.5" />
-                  TELEMETRY.RUN()
+                  VIEW DETAILS
                 </button>
                 {project.github && (
                   <a
@@ -240,7 +240,7 @@ export default function Projects() {
               <div className="px-6 py-4 border-b border-neon-cyan/20 bg-black/60 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Cpu className="w-5 h-5 text-neon-cyan animate-pulse" />
-                  <span className="font-mono text-xs text-white uppercase tracking-wider">PROJECT_TELEMETRY: {activeProject.title}</span>
+                  <span className="font-mono text-xs text-white uppercase tracking-wider">PROJECT_DETAILS: {activeProject.title}</span>
                 </div>
                 <button
                   onClick={() => setActiveProject(null)}
@@ -274,7 +274,7 @@ export default function Projects() {
 
                 {/* Features List */}
                 <div className="space-y-3">
-                  <h5 className="text-[10px] text-neon-cyan uppercase tracking-wider">{"// PLATFORM_CAPABILITIES"}</h5>
+                  <h5 className="text-[10px] text-neon-cyan uppercase tracking-wider">{"// KEY_FEATURES"}</h5>
                   <ul className="space-y-2 text-gray-400 text-sm font-sans">
                     {activeProject.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2.5">
@@ -287,7 +287,7 @@ export default function Projects() {
 
                 {/* Stats Table */}
                 <div className="space-y-3">
-                  <h5 className="text-[10px] text-neon-purple uppercase tracking-wider">{"// ENGINE_EVALUATION_METRICS"}</h5>
+                  <h5 className="text-[10px] text-neon-purple uppercase tracking-wider">{"// PROJECT_METRICS"}</h5>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     {activeProject.stats.map((stat, idx) => (
                       <div key={idx} className="p-3 border border-white/5 bg-white/[0.01] rounded flex flex-col justify-between">

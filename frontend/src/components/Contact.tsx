@@ -95,10 +95,10 @@ export default function Contact() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <h2 className="font-display text-xs uppercase tracking-widest text-neon-cyan mb-2">
-            {"// SUB_SYSTEM: UPLINK_GATEWAY"}
+            {"// CONTACT: INQUIRIES"}
           </h2>
           <h3 className="text-3xl md:text-5xl font-black text-white">
-            Initiate Secure Connection
+            Get In Touch
           </h3>
           <div className="w-16 h-[2px] bg-gradient-to-r from-neon-cyan to-neon-purple mt-4" />
         </div>
@@ -200,7 +200,7 @@ export default function Contact() {
                 {status === "SUCCESS" && (
                   <div className="p-4 border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 rounded-xl flex items-center gap-3">
                     <CheckCircle2 className="w-5 h-5 shrink-0" />
-                    <span>TRANSMISSION SECURED. SENSORS DETECT 100% DATA DELIVERY. THANK YOU!</span>
+                    <span>Message sent successfully! I'll get back to you soon.</span>
                   </div>
                 )}
 
@@ -220,12 +220,12 @@ export default function Contact() {
                   {status === "SENDING" ? (
                     <>
                       <div className="w-4 h-4 rounded-full border-2 border-black border-t-transparent animate-spin" />
-                      TRANSMITTING_PACKETS...
+                      SENDING...
                     </>
                   ) : (
                     <>
                       <Send className="w-4 h-4" />
-                      SUBMIT.TRANSMIT()
+                      SEND MESSAGE
                     </>
                   )}
                 </button>
@@ -237,3 +237,4 @@ export default function Contact() {
     </section>
   );
 }
+
