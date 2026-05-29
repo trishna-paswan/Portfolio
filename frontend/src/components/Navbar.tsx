@@ -60,7 +60,8 @@ export default function Navbar() {
             
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-full border border-white/10 text-gray-400 hover:text-neon-cyan transition-colors"
+              className="lg:hidden p-2 rounded-full border border-white/10 text-gray-400 hover:text-neon-cyan hover:border-neon-cyan/50 transition-all cursor-pointer relative z-[60]"
+              aria-label="Toggle Menu"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -75,7 +76,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl lg:hidden flex flex-col items-center justify-center p-6"
+            className="fixed inset-0 z-[55] bg-black/98 backdrop-blur-2xl lg:hidden flex flex-col items-center justify-center p-6"
           >
             <div className="w-full max-w-sm flex flex-col gap-4">
               <div className="font-mono text-[10px] text-gray-500 mb-4 border-b border-white/10 pb-2 uppercase tracking-widest text-center">
@@ -85,11 +86,14 @@ export default function Navbar() {
                 <Link
                   key={item.id}
                   href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    console.log(`Navigating to ${item.id}`);
+                  }}
                   className={`flex items-center gap-4 px-6 py-4 rounded-2xl border font-mono transition-all ${
                     activeSection === item.id
                       ? "bg-neon-cyan/10 border-neon-cyan/40 text-neon-cyan shadow-[0_0_20px_rgba(0,240,255,0.1)]"
-                      : "border-white/5 text-gray-400"
+                      : "border-white/5 text-gray-400 hover:border-white/20"
                   }`}
                 >
                   <div className={`p-2 rounded-lg ${activeSection === item.id ? "bg-neon-cyan/20" : "bg-white/5"}`}>
