@@ -228,7 +228,7 @@ export default function Terminal() {
 
       {/* Terminal Main Body */}
       <div 
-        className="relative w-full h-[400px] border border-neon-cyan/20 rounded-b-lg bg-black/90 p-4 font-mono text-xs overflow-y-auto cursor-text shadow-[0_0_40px_rgba(0,240,255,0.05)] scanline"
+        className="relative w-full h-[350px] md:h-[400px] border border-neon-cyan/20 rounded-b-lg bg-black/90 p-3 md:p-4 font-mono text-[10px] md:text-xs overflow-y-auto cursor-text shadow-[0_0_40px_rgba(0,240,255,0.05)] scanline"
         onClick={() => inputRef.current?.focus()}
       >
         {isMatrixMode && (
@@ -237,7 +237,7 @@ export default function Terminal() {
 
         <div className="relative z-10 space-y-2 whitespace-pre-wrap">
           {/* Welcome ASCII Logo */}
-          <div className="text-neon-cyan font-bold leading-tight select-none">
+          <div className="text-neon-cyan font-bold leading-tight select-none text-[8px] sm:text-[10px] md:text-xs scale-y-75 sm:scale-y-100 origin-left">
             {` _____ ____  ___ ____  _   _ _   _    _      ___  ____  
 |_   _|  _ \\|_ _/ ___|| | | | \\ | |  / \\    / _ \\/ ___| 
   | | | |_) || |\\___ \\| |_| |  \\| | / _ \\  | | | \\___ \\ 

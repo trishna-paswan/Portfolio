@@ -200,7 +200,7 @@ export default function Contact() {
                 {status === "SUCCESS" && (
                   <div className="p-4 border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 rounded-xl flex items-center gap-3">
                     <CheckCircle2 className="w-5 h-5 shrink-0" />
-                    <span>Message sent successfully! I'll get back to you soon.</span>
+                    <span>Message sent successfully! I&apos;ll get back to you soon.</span>
                   </div>
                 )}
 

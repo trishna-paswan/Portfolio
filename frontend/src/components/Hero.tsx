@@ -191,14 +191,14 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-4"
+          className="space-y-4 px-4"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-cyan/20 bg-neon-cyan/5 text-neon-cyan font-mono text-xs uppercase tracking-widest animate-pulse">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-cyan/20 bg-neon-cyan/5 text-neon-cyan font-mono text-[10px] md:text-xs uppercase tracking-widest animate-pulse">
             <span className="w-1.5 h-1.5 bg-neon-cyan rounded-full" />
             Trishna Paswan • System Operational
           </div>
           
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black font-display tracking-tight text-white leading-none">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black font-display tracking-tight text-white leading-tight md:leading-none">
             Architecting the <br className="hidden md:inline" />
             <span className="bg-gradient-to-r from-neon-cyan via-blue-400 to-neon-purple bg-clip-text text-transparent text-glow-cyan">
               Future of Automation

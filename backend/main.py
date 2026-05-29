@@ -5,6 +5,14 @@ import uvicorn
 import logging
 
 import os
+import resend
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Configure Resend
+resend.api_key = os.getenv("RESEND_API_KEY")
 
 # Configure logger
 logging.basicConfig(level=logging.INFO)
