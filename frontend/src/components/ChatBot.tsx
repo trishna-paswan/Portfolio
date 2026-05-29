@@ -36,65 +36,6 @@ export default function ChatBot() {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isLoading]);
 
-  // Local fallback response engine
-  const getLocalResponse = (query: string): string => {
-    const q = query.toLowerCase();
-
-    if (q.includes("project") || q.includes("build") || q.includes("work")) {
-      return `TRISHNA HAS BUILT MULTIPLE AI-POWERED PLATFORMS:
-${portfolioData.projects.map(p => `- ${p.title}: ${p.subtitle} (${p.tech.join(", ")})`).join("\n")}`;
-    }
-
-    if (q.includes("skill") || q.includes("technolog") || q.includes("know") || q.includes("language") || q.includes("code")) {
-      return `TECHNICAL CAPABILITIES LOGGED:
-${portfolioData.skills.map(s => `- ${s.category}: ${s.items}.`).join("\n")}`;
-    }
-
-    if (q.includes("omniai") || q.includes("omni ai") || q.includes("form")) {
-      const p = portfolioData.projects.find(p => p.title === "OmniAI");
-      return `OMNIAI LOGS:
-- DESCRIPTION: ${p?.description}
-- CAPABILITIES: ${p?.features.join(", ")}
-- TECH STACK: ${p?.tech.join(", ")}.`;
-    }
-
-    if (q.includes("codearena") || q.includes("code arena") || q.includes("sandbox") || q.includes("compiler")) {
-      const p = portfolioData.projects.find(p => p.title === "CodeArena");
-      return `CODEARENA LOGS:
-- DESCRIPTION: ${p?.description}
-- CAPABILITIES: ${p?.features.join(", ")}
-- TECH STACK: ${p?.tech.join(", ")}.`;
-    }
-
-    if (q.includes("education") || q.includes("college") || q.includes("university") || q.includes("study") || q.includes("student")) {
-      return `ACADEMIC LOGS:
-- EDUCATION: ${portfolioData.profile.education}
-- FOCUS: Advanced algorithms, artificial intelligence models, and student leadership.`;
-    }
-
-    if (q.includes("contact") || q.includes("email") || q.includes("social") || q.includes("reach") || q.includes("linkedin") || q.includes("github")) {
-      return `COMMUNICATIONS PROTOCOLS:
-- EMAIL: ${portfolioData.profile.email}
-- LINKEDIN: ${portfolioData.profile.linkedin.replace("https://", "")}
-- GITHUB: ${portfolioData.profile.github.replace("https://", "")}
-- LEETCODE: ${portfolioData.profile.leetcode.replace("https://", "")}
-Feel free to submit a message in the contact form below!`;
-    }
-
-    if (q.includes("resume") || q.includes("cv") || q.includes("profile")) {
-      return `RESUME LOGS:
-Trishna's resume details her experience and skills. You can view her NEURAL_CV on Google Drive by clicking the button in the Hero section, or type 'resume' in the terminal above!`;
-    }
-
-    if (q.includes("hackathon") || q.includes("codechef") || q.includes("sih") || q.includes("hackstreet")) {
-      return `CREDENTIALS LOGS:
-${portfolioData.achievements.map(a => `- ${a}`).join("\n")}`;
-    }
-
-    return `REQUEST RECEIVED. TRISHNA_AI HAS SEARCHED HER LOCAL KERNEL.
-I couldn't locate specific details about "${query}". Try asking about her "Projects", "Skills", "OmniAI", or "Contact details". You can also type commands into the terminal above!`;
-  };
-
   const handleSend = useCallback(async (textToSend: string) => {
     if (!textToSend.trim()) return;
 
@@ -110,7 +51,6 @@ I couldn't locate specific details about "${query}". Try asking about her "Proje
     setInput("");
     setIsLoading(true);
 
-    // Try communicating with FastAPI server
     try {
       const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
       const response = await fetch(`${apiBase}/api/chat`, {
@@ -119,39 +59,32 @@ I couldn't locate specific details about "${query}". Try asking about her "Proje
         body: JSON.stringify({ message: textToSend })
       });
 
-      if (response.ok) {
-        const data = await response.json();
-        setMessages((prev) => [
-          ...prev,
-          {
-            id: (Date.now() + 1).toString(),
-            sender: "ai",
-            text: data.reply.toUpperCase(),
-            timestamp: new Date().toLocaleTimeString()
-          }
-        ]);
-      } else {
-        throw new Error("Backend offline");
-      }
+      if (!response.ok) throw new Error("Backend offline");
+
+      const data = await response.json();
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: (Date.now() + 1).toString(),
+          sender: "ai",
+          text: data.reply,
+          timestamp: new Date().toLocaleTimeString()
+        }
+      ]);
     } catch {
-      // Graceful local fallback simulation with 800ms delay
-      setTimeout(() => {
-        const aiResponse = getLocalResponse(textToSend);
-        setMessages((prev) => [
-          ...prev,
-          {
-            id: (Date.now() + 1).toString(),
-            sender: "ai",
-            text: aiResponse,
-            timestamp: new Date().toLocaleTimeString()
-          }
-        ]);
-      }, 700);
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: (Date.now() + 1).toString(),
+          sender: "ai",
+          text: "System: AI_CORE_UNAVAILABLE. Please try again later or contact me via email directly.",
+          timestamp: new Date().toLocaleTimeString()
+        }
+      ]);
     } finally {
-      // Stop loader
-      setTimeout(() => setIsLoading(false), 700);
+      setIsLoading(false);
     }
-  }, []); // messages length is not needed here as we use functional update and Date.now for IDs
+  }, []);
 
   return (
     <section id="chat" className="w-full py-24 px-4 md:px-8 relative overflow-hidden border-b border-white/[0.03] scroll-mt-10">
